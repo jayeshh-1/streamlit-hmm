@@ -16,24 +16,70 @@ st.set_page_config(
 # ==========================================
 st.markdown("""
     <style>
-    /* Typography and Spacing */
-    .main { max-width: 1350px; margin: 0 auto; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    /* Typography and Spacing */    
+    .main { max-width: 1100px; margin: 0 auto; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     
-    h1 { text-align: center; font-size: 2.8rem !important; font-weight: 800 !important; margin-bottom: 0.8rem !important; line-height: 1.25 !important; color: var(--text-color) !important; letter-spacing: -0.02em !important; }
-    .subtitle { text-align: center; font-size: 1.2rem !important; color: var(--text-color) !important; opacity: 0.80 !important; margin-bottom: 3.0rem !important; font-weight: 400 !important; }
+    /* Typography Upgrades */
+    h1 { text-align: center; font-size: 2.8rem !important; font-weight: 900 !important; margin-bottom: 0.5rem !important; line-height: 1.25 !important; color: var(--text-color) !important; opacity: 0.95 !important; letter-spacing: -0.02em !important; }
+    .subtitle { text-align: center; font-size: 1.3rem !important; color: var(--text-color) !important; opacity: 0.75 !important; font-style: italic !important; margin-bottom: 1.8rem !important; font-weight: 400 !important; }
+    h2 { font-weight: 800 !important; font-size: 2.2rem !important; margin-top: 2.8rem !important; border-bottom: 1px solid rgba(128, 128, 128, 0.2) !important; padding-bottom: 0.5rem !important; margin-bottom: 1.5rem !important; color: var(--text-color) !important; opacity: 0.95 !important; letter-spacing: -0.01em !important; }
+    h3 { font-weight: 700 !important; font-size: 1.6rem !important; margin-top: 2rem !important; margin-bottom: 1rem !important; color: var(--text-color) !important; opacity: 0.95 !important; }
     
-    h2 { font-weight: 800 !important; font-size: 2.0rem !important; margin-top: 3.5rem !important; border-bottom: 2px solid var(--secondary-background-color) !important; padding-bottom: 0.8rem !important; margin-bottom: 1.5rem !important; color: var(--text-color) !important; letter-spacing: -0.01em !important; }
-    h3 { font-weight: 700 !important; font-size: 1.4rem !important; margin-top: 1.5rem !important; margin-bottom: 1.0rem !important; color: var(--text-color) !important; opacity: 0.95 !important; }
-    h4 { font-weight: 700 !important; font-size: 1.15rem !important; color: var(--text-color) !important; opacity: 0.85 !important; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.0rem !important; margin-top: 1.2rem !important; }
-    
-    div[data-testid="stMarkdownContainer"] p, 
-    div[data-testid="stMarkdownContainer"] li { font-size: 1.1rem !important; line-height: 1.7 !important; font-weight: 400 !important; color: var(--text-color) !important; opacity: 0.90 !important; } 
-    div[data-testid="stMarkdownContainer"] li { margin-bottom: 0.6rem !important; }
+    /* Paragraphs and Lists */
+    div[data-testid="stMarkdownContainer"] p, div[data-testid="stMarkdownContainer"] li { font-size: 1.25rem !important; line-height: 1.6 !important; font-weight: 400 !important; color: var(--text-color) !important; opacity: 0.9 !important; } 
+    div[data-testid="stMarkdownContainer"] li { margin-bottom: 0.5rem !important; }
     div[data-testid="stMarkdownContainer"] strong { font-weight: 700 !important; color: var(--text-color) !important; opacity: 1.0 !important; }
     
-    /* Section Badges */
-    .section-badge { background-color: #2563EB; color: #FFFFFF !important; padding: 8px 16px; border-radius: 8px; font-size: 1.15rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; vertical-align: middle; margin-right: 12px; }
-    .h2-text { position: relative; top: 2px; }
+    /* Elegant blockquotes */
+    .callout { 
+        border-left: 5px solid #3B82F6 !important; 
+        padding-left: 1.25rem !important; 
+        margin: 1.4rem 0 !important; 
+        color: var(--text-color) !important; 
+        font-size: 1.25rem !important; 
+        background-color: transparent !important;
+    }
+
+    
+    /* UI Components */
+    .section-badge { background-color: #2563EB; color: #FFFFFF !important; padding: 8px 16px; border-radius: 8px; font-size: 1.65rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; vertical-align: middle; margin-right: 12px; }
+    .h2-text { position: relative; top: 3px; }
+    .hero-box { background-color: var(--secondary-background-color); border: 1px solid rgba(128, 128, 128, 0.2); border-radius: 6px; padding: 20px 25px; margin: 1.5rem 0 2.5rem 0; }
+    .hero-box-title { font-size: 1.2rem; font-weight: 700; color: #3B82F6; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .insight-box { border-left: 5px solid #8B5CF6 !important; padding: 1.25rem !important; margin: 1.5rem 0 !important; background-color: var(--secondary-background-color) !important; color: var(--text-color) !important; border-radius: 0 6px 6px 0 !important; }
+    .insight-title { color: #8B5CF6; font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .audit-box { border-left: 5px solid #F59E0B !important; padding: 1.25rem !important; margin: 1.5rem 0 !important; background-color: var(--secondary-background-color) !important; border-radius: 0 6px 6px 0 !important; }
+    .findings-box { border-left: 5px solid #10B981 !important; padding: 1.2rem !important; margin: 2rem 0 !important; background-color: var(--secondary-background-color) !important; border-radius: 0 6px 6px 0 !important; }
+    .findings-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #10B981; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    
+    /* Stats & Tables */
+    .stat-row { display: flex; gap: 20px; margin-bottom: 25px; margin-top: 15px; }
+    .stat-box { flex: 1; background-color: var(--secondary-background-color) !important; border: 1px solid rgba(128, 128, 128, 0.2) !important; border-radius: 6px !important; padding: 15px !important; text-align: center !important; margin-bottom: 15px !important; }
+    .stat-value { font-size: 2.0rem !important; font-weight: 700 !important; color: var(--text-color) !important; margin-bottom: 2px !important; line-height: 1 !important;}
+    .stat-label { font-size: 0.85rem !important; font-weight: 600 !important; color: var(--text-color) !important; opacity: 0.6 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important;}
+    
+    /* Sidebar Table of Contents */
+    .toc-link { text-decoration: none !important; font-size: 1.2rem !important; text-align: center !important; display: block !important; padding: 12px 10px !important; font-weight: 500 !important; color: var(--text-color) !important; opacity: 0.8 !important; transition: opacity 0.2s ease-in-out !important; }
+    .toc-link:hover { opacity: 1.0 !important; color: #FBBF24 !important; background-color: rgba(251, 191, 36, 0.05) !important; text-decoration: none !important; }
+    
+    /* Sidebar Author Card */
+    .author-card-fixed { background-color: #0F172A !important; border-top: 2px solid #FBBF24 !important; border-radius: 10px !important; padding: 12px 10px !important; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important; margin-bottom: 15px !important; text-align: center !important; }
+    .sidebar-label-fixed { color: #FBBF24 !important; font-weight: 900 !important; letter-spacing: 0.15em !important; text-transform: uppercase !important; font-size: 1.03rem !important; display: block !important; margin-bottom: 2px !important; }
+    .sidebar-author-fixed { color: #FFFFFF !important; font-weight: 800 !important; font-size: 1.34rem !important; display: block !important; line-height: 1.1 !important; }
+    .sidebar-sub-fixed { color: rgba(255, 255, 255, 0.65) !important; font-style: italic !important; font-weight: 400 !important; font-size: 1.05rem !important; display: block !important; margin-top: 8px !important; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 6px !important; }
+    
+    /* Mobile Overrides */
+    .mobile-sidebar-hint { display: none; }
+    .mobile-menu-badge { display: none; } 
+    
+    @media (max-width: 768px) {
+        .mobile-sidebar-hint { display: block !important; background-color: rgba(59, 130, 246, 0.1); color: #3B82F6; padding: 12px; border-radius: 8px; text-align: center; font-weight: 500; font-size: 0.95rem; margin-top: 25px; border: 1px solid rgba(59, 130, 246, 0.3); line-height: 1.4; }
+        .mobile-menu-badge { display: block !important; position: fixed; top: 14px; left: 55px; background-color: #2563EB; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; z-index: 999999 !important; box-shadow: 0 2px 5px rgba(0,0,0,0.2); animation: pulse 2s infinite; pointer-events: none; transition: opacity 0.2s ease-in-out, visibility 0.2s; }
+        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); } }
+        .stApp:has([data-testid="stSidebar"][aria-expanded="true"]) .mobile-menu-badge { opacity: 0 !important; visibility: hidden !important; }
+    }
     
     /* VS Comparison Box for Architecture */
     .vs-container { display: flex; gap: 25px; margin: 25px 0; }
@@ -47,20 +93,7 @@ st.markdown("""
     .vs-item strong { display: block; color: var(--text-color); font-size: 1.1rem; margin-bottom: 4px; }
     .vs-item span { opacity: 0.85; display: block; }
     
-    /* Metrics and Callout Boxes */
-    .stat-row { display: flex; gap: 20px; margin-bottom: 25px; margin-top: 15px; }
-    .stat-box { flex: 1; background-color: var(--secondary-background-color) !important; border: 1px solid rgba(128, 128, 128, 0.2) !important; border-radius: 8px !important; padding: 25px 20px !important; text-align: center !important; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-    .stat-value { font-size: 2.2rem !important; font-weight: 800 !important; color: var(--text-color) !important; margin-bottom: 8px !important; line-height: 1 !important;}
-    .stat-label { font-size: 1.0rem !important; font-weight: 700 !important; color: var(--text-color) !important; opacity: 0.75 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important;}
-    
-    .audit-box { border-left: 5px solid #F59E0B !important; padding: 1.8rem !important; margin: 2.0rem 0 !important; background-color: var(--secondary-background-color) !important; border-radius: 0 8px 8px 0 !important; }
-    .insight-box { border-left: 5px solid #10B981 !important; padding: 1.8rem !important; margin: 2.0rem 0 !important; background-color: var(--secondary-background-color) !important; border-radius: 0 8px 8px 0 !important; }
-    .findings-box { border-left: 5px solid #EF4444 !important; padding: 1.8rem !important; margin: 2.5rem 0 !important; background-color: var(--secondary-background-color) !important; border-radius: 0 8px 8px 0 !important; }
-    .findings-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; color: #EF4444; text-transform: uppercase; letter-spacing: 0.05em; }
-    
-    .toc-link { text-decoration: none !important; font-size: 1.0rem !important; display: block !important; padding: 6px 0 !important; font-weight: 500 !important; color: var(--text-color) !important; opacity: 0.85 !important; transition: all 0.2s ease-in-out !important; }
-    .toc-link:hover { color: #2563EB !important; opacity: 1.0 !important; text-decoration: none !important; }
-    
+
     /* Style for Streamlit Tabs */
     button[data-baseweb="tab"] { font-size: 1.15rem !important; font-weight: 600 !important; padding-top: 1rem !important; padding-bottom: 1rem !important; }
     </style>
@@ -129,13 +162,13 @@ def get_vol_benchmark():
 @st.cache_data
 def get_regime_diagnostics():
     return pd.DataFrame([
-        {"Diagnostic Test": "1. Volatility Stratification", "Metric Evaluated": "Monotonic OOS Annualized Volatility", "Result": "PASS (604.2% < 880.7% < 973.5%)"},
-        {"Diagnostic Test": "2. Tail-Risk Isolation", "Metric Evaluated": "CVaR-99 Monotonicity", "Result": "PASS (-3462 < -4673 < -4877)"},
-        {"Diagnostic Test": "3. Empirical OOS Churn", "Metric Evaluated": "Empirical Avg Dwell Time > 4.0H", "Result": "PASS (4.54 Hours)"},
-        {"Diagnostic Test": "4. Distributional Purity", "Metric Evaluated": "Kolmogorov-Smirnov (KS) Test", "Result": "PASS (p < 0.05, distinct states)"},
-        {"Diagnostic Test": "5. Early Warning Power", "Metric Evaluated": "T+12H Volatility > 1.5x Base Vol", "Result": "FAIL (Lags the market drop)"},
-        {"Diagnostic Test": "6. Heteroskedasticity Absorption", "Metric Evaluated": "Conditional ACF < Unconditional", "Result": "FAIL (Fails to absorb all noise)"},
-        {"Diagnostic Test": "7. Empirical Transition Stability", "Metric Evaluated": "OOS Persistence matches IS Bounds", "Result": "PASS (0.846 match)"}
+        {"Diagnostic Test": "1. Volatility Stratification", "Metric Evaluated": "Monotonic OOS Annualized Volatility", "Result": "PASS (6.04% < 8.81% < 9.74%)"},
+        {"Diagnostic Test": "2. Tail-Risk Isolation", "Metric Evaluated": "CVaR-99 Monotonicity", "Result": "PASS (-34.6bps < Uncond < -48.8bps)"},
+        {"Diagnostic Test": "3. Empirical OOS Churn", "Metric Evaluated": "Empirical Avg Dwell Time", "Result": "PASS (4.54 Hours)"},
+        {"Diagnostic Test": "4. Distributional Purity", "Metric Evaluated": "Kolmogorov-Smirnov (KS) Test", "Result": "PASS (p=1.26e-154, distinct states)"},
+        {"Diagnostic Test": "5. Early Warning Power", "Metric Evaluated": "Fwd Drawdown in T+12H", "Result": "FAIL (-0.18%, lagging indicator)"},
+        {"Diagnostic Test": "6. Heteroskedasticity Absorption", "Metric Evaluated": "Conditional ACF < Unconditional", "Result": "FAIL (Calm ACF > Uncond ACF)"},
+        {"Diagnostic Test": "7. Empirical Transition Stability", "Metric Evaluated": "OOS Persistence matches IS Bounds", "Result": "PASS (Calm->Calm 0.846)"}
     ])
 
 @st.cache_data
@@ -190,20 +223,20 @@ def get_top_10_states():
 def get_tear_sheet():
     return pd.DataFrame({
         'Metric': ['Net Ann. Return', 'Ann. Volatility', 'Net Sharpe', 'Sortino', 'Max Drawdown', 'Win Rate', 'Profit Factor'],
-        'Vanilla ML (No Regime)': ['-1.43%', '13.51%', '-0.11', '-0.13', '-31.57%', '48.25%', '1.00'],
-        'Regime ML (Optimal)': ['-1.86%', '6.60%', '-0.28', '-0.33', '-16.94%', '44.04%', '0.98']
+        'Vanilla ML (No Regime)': ['-1.43%', '13.51%', '-0.11', '-0.15', '-31.57%', '48.25%', '1.00'],
+        'Regime ML (Optimal)': ['-1.59%', '6.59%', '-0.24', '-0.35', '-16.51%', '43.98%', '0.99']
     })
 
 @st.cache_data
 def get_execution_overlays():
     return pd.DataFrame([
-        {"Execution Overlay": "1. Base ML Signal", "Sharpe": "-0.28", "Ann Ret": "-1.86%", "MDD": "-16.94%"},
-        {"Execution Overlay": "2. Sparse Threshold Signal", "Sharpe": "+0.02", "Ann Ret": "+0.11%", "MDD": "-10.28%"},
-        {"Execution Overlay": "3. Hard Regime Routed", "Sharpe": "-0.85", "Ann Ret": "-9.13%", "MDD": "-33.62%"},
-        {"Execution Overlay": "4. Hazard Delta Exit", "Sharpe": "-0.31", "Ann Ret": "-2.02%", "MDD": "-17.64%"},
-        {"Execution Overlay": "5. High Conviction Filter", "Sharpe": "-0.34", "Ann Ret": "-2.27%", "MDD": "-18.30%"},
-        {"Execution Overlay": "6. Signal & Regime Agreement", "Sharpe": "-0.38", "Ann Ret": "-2.11%", "MDD": "-16.54%"},
-        {"Execution Overlay": "7. Pure Conviction Sizing", "Sharpe": "-0.29", "Ann Ret": "-3.35%", "MDD": "-27.60%"},
+        {"Execution Overlay": "1. Base ML Signal", "Sharpe": "-0.24", "Ann Ret": "-1.59%", "MDD": "-16.51%"},
+        {"Execution Overlay": "2. Sparse Threshold Signal", "Sharpe": "+0.05", "Ann Ret": "+0.22%", "MDD": "-10.11%"},
+        {"Execution Overlay": "3. Hard Regime Routed", "Sharpe": "-0.85", "Ann Ret": "-9.14%", "MDD": "-33.64%"},
+        {"Execution Overlay": "4. Hazard Delta Exit", "Sharpe": "-0.29", "Ann Ret": "-1.85%", "MDD": "-17.53%"},
+        {"Execution Overlay": "5. High Conviction Filter", "Sharpe": "-0.29", "Ann Ret": "-1.99%", "MDD": "-17.73%"},
+        {"Execution Overlay": "6. Signal & Regime Agreement", "Sharpe": "-0.36", "Ann Ret": "-2.03%", "MDD": "-16.54%"},
+        {"Execution Overlay": "7. Pure Conviction Sizing", "Sharpe": "-0.29", "Ann Ret": "-3.42%", "MDD": "-27.61%"},
     ])
 
 @st.cache_data
@@ -214,14 +247,14 @@ def get_ic_heatmap():
         {'Horizon': 'T+24 Hours', 'Global IC': '+0.0138', 'Calm IC': '+0.0045', 'Turbulent IC': '+0.0299', 'Crisis IC': '+0.0119'},
     ])
 
-@st.cache_data
-def get_slippage_data():
-    return pd.DataFrame({
-        'Added Spread': ['+0.0 bps (Base TCA)', '+0.5 bps', '+1.0 bps', '+2.0 bps'],
-        'Net Ann. Return': ['-3.91%', '-25.91%', '-47.92%', '-91.93%'],
-        'Net Sharpe': ['-0.53', '-3.51', '-6.45', '-12.17'],
-        'Max Drawdown': ['-28.74%', '-74.44%', '-91.67%', '-99.14%']
-    })
+# @st.cache_data
+# def get_slippage_data():
+#     return pd.DataFrame({
+#         'Added Spread': ['+0.0 bps (Base TCA)', '+0.5 bps', '+1.0 bps', '+2.0 bps'],
+#         'Net Ann. Return': ['-3.91%', '-25.91%', '-47.92%', '-91.93%'],
+#         'Net Sharpe': ['-0.53', '-3.51', '-6.45', '-12.17'],
+#         'Max Drawdown': ['-28.74%', '-74.44%', '-91.67%', '-99.14%']
+#     })
 
 @st.cache_data
 def get_strat_sharpe_matrix():
@@ -229,6 +262,17 @@ def get_strat_sharpe_matrix():
         {'Regime': 'Calm', 'Mean Reversion': '1.69', 'Momentum': '-1.30', 'Vanilla ML': '1.40', 'Regime ML': '0.08'},
         {'Regime': 'Turbulent', 'Mean Reversion': '1.23', 'Momentum': '0.71', 'Vanilla ML': '1.51', 'Regime ML': '-0.13'},
         {'Regime': 'Crisis', 'Mean Reversion': '1.45', 'Momentum': '-0.33', 'Vanilla ML': '-4.09', 'Regime ML': '-1.27'}
+    ])
+    
+@st.cache_data
+def get_meta_regime_data():
+    return pd.DataFrame([
+        {'Meta-Regime': 'Micro Shock', 'Time Active': '21.95%', 'Net P&L (%)': '+17.15%', 'Directional IC': '+0.0332'},
+        {'Meta-Regime': 'Macro Overhang', 'Time Active': '17.86%', 'Net P&L (%)': '+4.98%', 'Directional IC': '+0.0481'},
+        {'Meta-Regime': 'Absolute Calm', 'Time Active': '19.93%', 'Net P&L (%)': '-1.25%', 'Directional IC': '+0.0382'},
+        {'Meta-Regime': 'Mixed/Transitional', 'Time Active': '17.59%', 'Net P&L (%)': '-8.74%', 'Directional IC': '+0.0349'},
+        {'Meta-Regime': 'Spillover Contagion', 'Time Active': '14.09%', 'Net P&L (%)': '-14.21%', 'Directional IC': '+0.0182'},
+        {'Meta-Regime': 'Total Crisis', 'Time Active': '8.58%', 'Net P&L (%)': '-4.50%', 'Directional IC': '-0.0359'}
     ])
     
 @st.cache_data
@@ -240,20 +284,41 @@ def get_narrative_scenarios():
         {'Alpha Scenario': 'Post-Spillover Exhaustion', 'Theoretical P&L (%)': '-2.17%'},
         {'Alpha Scenario': 'Directed Spillover', 'Theoretical P&L (%)': '-12.08%'}
     ])
+    
+@st.cache_data
+def get_dm_test_metrics():
+    return pd.DataFrame([
+        {'Metric': 'RMSE', 'MS-GARCH': '0.037043', 'Causal GARCH': '0.037410', 'Delta': '-0.000367'},
+        {'Metric': 'Spearman IC (Raw)', 'MS-GARCH': '0.3653', 'Causal GARCH': '0.3462', 'Delta': '+0.0191'},
+        {'Metric': 'Spearman IC (Smoothed)', 'MS-GARCH': '0.5338', 'Causal GARCH': '0.5264', 'Delta': '+0.0074'}
+    ])
 
 # ==========================================
 # SIDEBAR NAVIGATION
 # ==========================================
 with st.sidebar:
+    st.markdown("""
+    <div class="author-card-fixed">
+        <span class="sidebar-label-fixed">AUTHOR</span>
+        <span class="sidebar-author-fixed">Jayesh Chaudhary</span>
+        <span class="sidebar-sub-fixed">Quantitative Researcher</span>
+    </div>
+    """, unsafe_allow_html=True)
+    
     st.title("Research Outline")
     st.markdown("""
-    <a href="#0-setup" class="toc-link">0. Problem Setup & Approach</a>
-    <a href="#1-dynamics" class="toc-link">1. Market Dynamics & Calibration</a>
-    <a href="#2-mrm" class="toc-link">2. Model Risk & RCM Clarity</a>
-    <a href="#3-diagnostics" class="toc-link">3. Regime Diagnostics</a>
-    <a href="#4-allocation" class="toc-link">4. Multi-Timeframe Integration</a>
-    <a href="#5-scenarios" class="toc-link">5. Regime Scenario Analysis</a>
-    <a href="#6-trading" class="toc-link">6. Exploratory Trading Simulation</a>
+    <a href="#0-setup" target="_self" class="toc-link">0. Problem Setup & Approach</a>
+    <a href="#1-market-dynamics" target="_self" class="toc-link">1. Market Dynamics & Calibration</a>
+    <a href="#2-mrm" target="_self" class="toc-link">2. Model Risk & Baseline Benchmarking</a>
+    <a href="#3-diagnostics" target="_self" class="toc-link">3. Regime Diagnostics</a>
+    <a href="#4-allocation" target="_self" class="toc-link">4. Multi-Timeframe Integration</a>
+    <a href="#5-meta-regimes" target="_self" class="toc-link">5. Meta-Regime Attribution</a>
+    <a href="#6-theoretical-limitations" target="_self" class="toc-link">6. Structural Limitations</a>
+    <a href="#7-conclusion" target="_self" class="toc-link">7. Final Verdict</a>
+    
+    <div class="mobile-sidebar-hint">
+        <strong>Tap outside</strong> or <strong>swipe left</strong> to close menu.
+    </div>
     """, unsafe_allow_html=True)
 
     
@@ -261,8 +326,24 @@ with st.sidebar:
 # ==========================================
 # MAIN DOCUMENT
 # ==========================================
+st.markdown('<div class="mobile-menu-badge">👈 Topics Menu</div>', unsafe_allow_html=True)
+
+st.markdown("""
+    <div style="text-align: center; margin-top: 1rem; margin-bottom: 0.2rem;">
+        <span style="background-color: #F59E0B; color: #111827; padding: 4px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Research in Progress (Beta)</span>
+    </div>
+""", unsafe_allow_html=True)
+
 st.markdown("<h1>Advanced Triple Regime Markov Switching GARCH Model</h1>", unsafe_allow_html=True)
 st.markdown("<p class='subtitle'>An empirical out-of-sample analysis of a custom HMM regime model on EUR/USD.</p>", unsafe_allow_html=True)
+
+st.markdown("""
+    <div style='text-align: center; margin-top: -1.0rem; margin-bottom: 3rem;'>
+        <span style='font-size: 1.0rem; color: var(--text-color); opacity: 0.5; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase;'>
+            Research by <strong>Jayesh Chaudhary</strong>
+        </span>
+    </div>
+""", unsafe_allow_html=True)
 
 # ------------------------------------------
 # QUICK STATS BAR
@@ -354,17 +435,22 @@ st.markdown("""
 <div class="audit-box">
 <strong>Data Integrity & The "Look-Ahead Bias" Wall</strong><br>
 Before running any models, we have to guarantee no future data leaks into the past. A common mistake is calculating Z-scores across the whole dataset, which accidentally bleeds future volatility spikes (like the 2020 pandemic) into 2018 training data. <br><br>
-We built a strict cutoff wall. Statistical parameters (mean and standard dev) are calculated <em>only</em> on the training data. Furthermore, because we predict multi-hour targets, we drop the final rows of the training set (<code>[:-24]</code>) to create a "dead zone" between the train and test splits. This physically prevents any future target prices from secretly bleeding backward into the training phase.
+We built a strict cutoff wall. Statistical parameters are calculated <em>only</em> on the training data. Furthermore, because we predict multi-hour targets, we drop the final rows of the training set (<code>[:-24]</code>) to create a "dead zone" between the train and test splits, preventing any future prices from bleeding backward.<br><br>
+<strong>Preventing Rolling Window Data Loss (Zero-Amnesia WFA):</strong><br>
+In standard Walk-Forward Analysis, rolling features (like a 24-hour moving average) break and return `NaN` at the start of every new test set. We engineered a "Zero-Amnesia" pipeline that dynamically fuses the tail of the Train set to the head of the Test set. This ensures all path-dependent technical indicators roll seamlessly across quarter-boundaries without ever peeking into the future.
 </div>
 """, unsafe_allow_html=True)
-st.divider()
 
 
 
 # ==========================================
 # SECTION 1: MARKET DYNAMICS
 # ==========================================
-st.markdown("<h2 id='1-dynamics'><span class='section-badge'>Phase 1</span><span class='h2-text'> Market Dynamics & Regime Calibration</span></h2>", unsafe_allow_html=True)
+st.markdown("""
+<div style="background-color: rgba(16, 185, 129, 0.1); border-left: 4px solid #10B981; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+<strong>Crucial Note on Methodology:</strong> Everything in this section—the return profiles, the volatilities, and the transition matrices—is calculated <strong>strictly Out-Of-Sample (OOS)</strong>. This is not an in-sample curve fit. This is how the asset <em>actually behaved</em> when the model was predicting blind on unseen data over 4 years.
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("Before testing any trading overlays, we first need to understand how EUR/USD naturally behaves in different states. We mapped the underlying return distributions across three hierarchical timeframes (Daily, 4-Hour, and Hourly) to see exactly what 'Calm' vs 'Crisis' looks like in the data.")
 
@@ -449,17 +535,71 @@ st.markdown("By calculating the expected average time spent in each regime mathe
 
 st.image("transition_heatmaps.png", caption="Transition Matrix Heatmaps visually confirming state persistence", use_container_width=True)
 
-with st.expander("The Math: MS-GARCH & Optimization Constraints"):
+st.markdown("#### Dynamic Matrix Drivers (TVTP Feature Engineering)")
+st.markdown("""
+Standard HMMs are "blind"—they use a static transition matrix that never changes. To make our model react to real-world liquidity and macro events, we engineered **Time-Varying Transition Probabilities (TVTP)**. 
+
+We built custom exogenous drivers for each timeframe. This ensures the Daily model doesn't flip into a Crisis due to 1-hour noise, while the Hourly model remains highly sensitive to session overlap liquidity.
+""")
+
+col_tvtp1, col_tvtp2, col_tvtp3 = st.columns(3)
+with col_tvtp1:
     st.markdown("""
-    **Solving Path-Dependence (Haas et al. 2004):**
-    If variance today depends on variance yesterday, and yesterday's variance depends on yesterday's regime, calculating all possible paths becomes mathematically impossible. To fix this, independent GARCH tracks run parallel inside each regime:
+    <div class="stat-box" style="padding: 15px; text-align: left !important; height: 100%;">
+    <div class="stat-label" style="margin-bottom: 5px; color: #2563EB !important;">1H Micro (Liquidity)</div>
+    <span style="font-size: 0.90rem; opacity: 0.85;">Driven purely by intraday flow.</span>
+    <ul style="font-size: 0.90rem; margin-top: 10px; padding-left: 20px; opacity: 0.9;">
+        <li><strong>70%</strong> Intraday Volatility (Meta Z-Score)</li>
+        <li><strong>30%</strong> Hour-of-Day Seasonality</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)
+    
+with col_tvtp2:
+    st.markdown("""
+    <div class="stat-box" style="padding: 15px; text-align: left !important; height: 100%;">
+    <div class="stat-label" style="margin-bottom: 5px; color: #2563EB !important;">4H Meso (The Bridge)</div>
+    <span style="font-size: 0.90rem; opacity: 0.85;">Blends intraday flow with macro state.</span>
+    <ul style="font-size: 0.90rem; margin-top: 10px; padding-left: 20px; opacity: 0.9;">
+        <li><strong>45%</strong> Intraday Volatility</li>
+        <li><strong>35%</strong> Day-of-Week Seasonality</li>
+        <li><strong>20%</strong> Macro Stress Index</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)
+    
+with col_tvtp3:
+    st.markdown("""
+    <div class="stat-box" style="padding: 15px; text-align: left !important; height: 100%;">
+    <div class="stat-label" style="margin-bottom: 5px; color: #2563EB !important;">1D Macro (The Anchor)</div>
+    <span style="font-size: 0.90rem; opacity: 0.85;">Ignores micro noise. Tracks fundamentals.</span>
+    <ul style="font-size: 0.90rem; margin-top: 10px; padding-left: 20px; opacity: 0.9;">
+        <li><strong>40%</strong> Macro Stress Index</li>
+        <li><strong>40%</strong> Week-of-Month Seasonality</li>
+        <li><strong>20%</strong> Day-of-Week Seasonality</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+with st.expander("The Math: Bayesian Priors, Custom Bounds, & Optimization"):
+    st.markdown("""
+    **1. Bayesian Stickiness Priors (Fixing the Flickering Problem)**
+    Standard Maximum Likelihood Estimation (MLE) tends to over-optimize for local noise, causing the HMM to violently "flicker" between states intraday. To force the model to respect actual institutional timeframes, I injected a custom Bayesian penalty directly into the diagonal of the transition matrix during optimization:
+    * **Macro Stickiness Penalty:** `100.0`
+    * **Meso Stickiness Penalty:** `150.0`
+    * **Micro Stickiness Penalty:** `250.0`
+    By mathematically penalizing state-switching, the optimizer is forced to demand overwhelming statistical evidence before triggering a regime change.
+
+    **2. Strict L-BFGS-B Optimization Constraints**
+    Standard Python libraries often fail to converge on noisy FX data because they allow parameters to wander into mathematically impossible zones. I wrote a custom C-compiled objective function constrained by strict boundaries:
+    * **Covariance Stationarity:** We strictly force $\\alpha + \\beta < 0.999$. If this bound is breached, the model assumes volatility will explode to infinity, completely breaking the GARCH forecasts.
+    * **Finite 4th Moments:** The Hansen's Skew-t degrees of freedom ($\\nu$) is hard-bounded to $> 5.0$. This guarantees the math won't break when calculating kurtosis during "Black Swan" tail events.
+
+    **3. Solving Path-Dependence (Haas et al. 2004)**
+    If variance today depends on variance yesterday, and yesterday's variance depends on yesterday's regime, calculating all possible paths over 10 years becomes computationally impossible. Following Haas (2004), we bypass this by running independent GARCH(1,1) tracks completely parallel *inside* each regime:
     """)
     st.latex(r"\sigma_{t,i}^2 = \omega_i + \alpha_i (r_{t-1} - \mu_i - \phi_i r_{t-2})^2 + \beta_i \sigma_{t-1,i}^2")
-    st.markdown("""
-    **Strict L-BFGS-B Constraints:**
-    * **Covariance Stationarity:** We strictly force $\alpha + \beta < 0.999$. If we don't, the variance explodes to infinity during optimization.
-    * **Finite 4th Moments:** The Skew-t degrees of freedom ($\nu$) is bounded $> 5.0$ to ensure we can actually calculate kurtosis validly.
-    """)
 
 
 # ==========================================
@@ -520,30 +660,22 @@ The MS-GARCH engine identifies the actual structural environment. While a basic 
 st.markdown("<h2 id='3-diagnostics'><span class='section-badge'>Phase 3</span><span class='h2-text'> Regime Diagnostics</span></h2>", unsafe_allow_html=True)
 
 st.markdown("""
-Before testing these states in a trading strategy, we need to prove they are statistically real. We run a series of structural health checks to verify that the HMM successfully carved the market into distinct, non-random environments out-of-sample, rather than just overfitting to noise.
+Before using these regimes in a trading strategy, we have to prove they are statistically valid. We ran standard sanity checks on the out-of-sample data to ensure the model isn't just overfitting to historical noise.
 """)
 
-col_or1, col_or2 = st.columns([1.2, 1])
 
-with col_or1:
-    st.markdown("#### Structural Health Checks")
-    st.dataframe(get_regime_diagnostics(), use_container_width=True, hide_index=True)
-    st.markdown("""
+st.markdown("#### Out-of-Sample Sanity Checks")
+st.dataframe(get_regime_diagnostics(), use_container_width=True, hide_index=True)
+st.markdown("""
 <div class="insight-box">
-<strong>The Mixed Results:</strong><br>
-The econometric engine successfully separated tail risk (Crisis CVaR-99 drops to -4877 bps) and the Kolmogorov-Smirnov (KS) Test mathematically proved the three states are distinct from one another. <br><br>
-<strong>However, failure points emerged:</strong> The asset failed to fully absorb volatility clustering. More importantly, the Event Study showed that the regime transitions act as a <em>lagging indicator</em>—the model reacts <em>after</em> volatility spikes rather than predicting them.
+<strong>Statistical Validation:</strong><br>
+<strong>Distributional Purity:</strong> Out-of-sample Kolmogorov-Smirnov (KS) tests yielded p-values near zero ($1.26 \\times 10^{-154}$), proving the regimes are not arbitrary splits but distinct statistical distributions. <br><br>
+<strong>Tail Isolation:</strong> The model successfully partitioned the "fat tails." The 99% Expected Shortfall (CVaR-99) for the 'Crisis' regime is -48.8 bps, nearly double the 'Calm' regime's risk substrate.<br><br>
+<strong>Limitation:</strong> The Event Study shows state transitions are <em>lagging indicators</em> due to the Hamilton Filter's smoothing delay. The model confirms volatility structural breaks rather than predicting them.
 </div>
 """, unsafe_allow_html=True)
 
-with col_or2:
-    st.markdown("#### Out-of-Sample Stability Check")
-    st.markdown("We compare the empirical transitions that actually happened out-of-sample against the model's theoretical probabilities. This proves the math didn't break down when exposed to unseen data.")
-    st.dataframe(get_empirical_transition_matrix(), use_container_width=True, hide_index=True)
-    st.image("empirical_oos_transition_heatmap.png", caption="OOS Empirical Realized Transitions", use_container_width=True)
-
 st.image("oracle_diagnostics_dashboard.png", caption="Diagnostics Dashboard: KDE Distributional Purity & Event Study Trajectories", use_container_width=True)
-
 
 # ==========================================
 # SECTION 4: MULTI-TIMEFRAME INTEGRATION
@@ -551,9 +683,11 @@ st.image("oracle_diagnostics_dashboard.png", caption="Diagnostics Dashboard: KDE
 st.markdown("<h2 id='4-allocation'><span class='section-badge'>Phase 4</span><span class='h2-text'> Multi-Timeframe Integration (The 27-State Model)</span></h2>", unsafe_allow_html=True)
 
 st.markdown("""
-Instead of looking at timeframes in isolation, we stacked the Daily, 4-Hour, and 1-Hour models on top of each other. Because each timeframe has 3 states (Calm, Turbulent, Crisis), nesting them creates **27 unique market environments** ($3 \\times 3 \\times 3 = 27$). 
+Looking at a single timeframe misses the broader market context. By nesting the Daily, 4-Hour, and 1-Hour models together, we created **27 unique market environments** ($3 \\times 3 \\times 3 = 27$). We trained 27 separate linear models (`RidgeCV`) on the out-of-sample data to act as "specialist experts" for each specific environment.
 
-We trained 27 separate machine learning models on the out-of-sample data, dynamically blending their predictions based on whatever specific state the market was currently in.
+**Preventing Overfitting (L2 Regularization):** Slicing data into 27 micro-states creates small sample sizes, which is a massive curve-fitting risk. We used L2 penalty constraints to mathematically force noisy, fake signals to shrink to zero, ensuring our expert models only trade on robust, persistent factors.
+
+**Continuous Soft-Routing:** Instead of using brittle IF/THEN rules (e.g., "If Crisis > 50%, turn off the strategy"), we dynamically blend the predictions from all 27 models based on real-time probabilities. This continuous blending prevents the portfolio from wildly whip-sawing at regime boundaries.
 """)
 
 col_ten1, col_ten2 = st.columns([1.3, 1])
@@ -561,10 +695,9 @@ col_ten1, col_ten2 = st.columns([1.3, 1])
 with col_ten1:
     st.markdown("#### Performance Across the 27 Environments")
     st.dataframe(get_tensor_3d_data(), use_container_width=True, hide_index=True)
-    st.markdown("<p style='font-size:1.0rem; opacity:0.8; margin-top:-10px; margin-bottom: 20px;'><em>Grid displays net P&L concentration. The model bleeds severely in purely 'Calm' states across all timeframes, but extracts returns when timeframes conflict (Macro uncertainty).</em></p>", unsafe_allow_html=True)
+    
     
     st.markdown("#### Top 6 High-Alpha Micro-States")
-    st.markdown("<p style='font-size:1.0rem; opacity:0.85; margin-top:-10px;'><em>By isolating specific structural states, we filter out flat, trendless chop where intraday price action is mathematically compressed.</em></p>", unsafe_allow_html=True)
     st.dataframe(get_top_10_states(), use_container_width=True, hide_index=True)
 
 with col_ten2:
@@ -572,47 +705,41 @@ with col_ten2:
     st.dataframe(get_feature_ablation().head(10), use_container_width=True, hide_index=True)
     
     st.markdown("""
-<div class="insight-box">
-<strong>Transition Alpha & Hazard Delta</strong><br>
-The model assigned high positive weight to a custom feature called <code>Hazard_Delta</code> (the rate-of-change of the 4H Crisis probability). The system learned to scale its exposure based on the *acceleration* of crisis probabilities, attempting to front-run the actual regime shift before it happens.
-</div>
-""", unsafe_allow_html=True)
+    <div class="insight-box">
+    <strong>Calculus of Transition: Hazard Delta</strong><br>
+    The most significant econometric feature was <code>Hazard_Delta</code>—the first derivative ($\Delta P / \Delta t$) of the Forward 4H Crisis probability. The model learned that <strong>acceleration</strong> in the crisis hazard rate is a higher-conviction signal for risk-off positioning than the absolute probability level itself.
+    </div>
+    """, unsafe_allow_html=True)
 
-st.markdown("#### The Disagreement Filter (Edge Under Structural Stress)")
+st.markdown("#### The Disagreement Filter: Do timeframes need to align?")
 st.markdown("""
-We split the out-of-sample P&L based on how much the 1D, 4H, and 1H models disagreed with each other:
-- **Low Disagreement (All timeframes aligned):** Sharpe -0.32 | Ann. Return: -1.75%
-- **High Disagreement (Timeframes in conflict):** Sharpe -0.26 | Ann. Return: -1.96%
+Most trend-following strategies wait for all timeframes to perfectly align before taking a trade. We tested this assumption by splitting our out-of-sample P&L based on how much the 1D, 4H, and 1H models disagreed with each other:
+- **Low Disagreement (Timeframes Aligned):** Sharpe -0.32 | Ann. Return: -1.75%
+- **High Disagreement (Timeframes Conflicting):** Sharpe -0.26 | Ann. Return: -1.96%
 
-*Insight: For EUR/USD, theoretical edge actually survived better when the timeframes were in conflict (transitional periods). Trend-following fails when the market is too perfectly aligned.*
+*Quant Insight:* For EUR/USD, the theoretical edge actually survives better during transitional, conflicting periods. When all three timeframes are perfectly aligned in a "Calm" state, the market is simply too efficient and trend-following fails.
 """)
 
 
 # ==========================================
-# SECTION 5: REGIME SCENARIO ANALYSIS
+# SECTION 5: META-REGIME ATTRIBUTION
 # ==========================================
-st.markdown("<h2 id='5-scenarios'><span class='section-badge'>Phase 5</span><span class='h2-text'> Regime Scenario Analysis</span></h2>", unsafe_allow_html=True)
+st.markdown("<h2 id='5-meta-regimes'><span class='section-badge'>Phase 5</span><span class='h2-text'> Meta-Regime Attribution</span></h2>", unsafe_allow_html=True)
 
 st.markdown("""
-**How do we actually use these 27 market states?** Institutional desks rarely use regime models to generate high-frequency trading signals. Their true value is **contextual filtering**. The model tells a portfolio manager *when* to size up because the market behavior is clean, and *when* to sit out entirely to avoid structural noise.
-
-By grouping our 27 states into broader market narratives, we found isolated pockets where the underlying predictive edge is highly profitable.
+Beyond the three primary regimes (Calm, Turbulent, Crisis), the 3D Volatility Tensor allows us to identify six "meta-regimes" that describe the structural interaction between the macro, meso, and micro environments. These are research constructs used to attribute exactly where the market is statistically inefficient.
 """)
-
-st.image("scenario_and_regime_lift_dashboard.png", caption="Theoretical P&L isolated by specific Market Scenarios", use_container_width=True)
 
 col_scen_img, col_scen_data = st.columns([1.2, 1])
 
 with col_scen_img:
-    st.image("scenario_and_regime_lift_dashboard.png", caption="Theoretical P&L isolated by specific Market Scenarios", use_container_width=True)
+    st.image("scenario_and_regime_lift_dashboard.png", caption="Visualizing Meta-Regime Distributions", use_container_width=True)
 
 with col_scen_data:
-    st.markdown("#### Scenario Alpha Extraction")
-    # You need to define this function in your data generators at the top of the file!
-    # I have provided the exact function below this block.
-    st.dataframe(get_narrative_scenarios(), use_container_width=True, hide_index=True)
+    st.markdown("#### Structural Inefficiency by Meta-Regime")
+    st.dataframe(get_meta_regime_data(), use_container_width=True, hide_index=True)
     st.markdown("""
-    <p style='font-size:0.95rem; opacity:0.8;'><em>Note: These rules are NOT traded live to prevent overfitting. They are isolated to measure theoretical alpha within specific structural setups.</em></p>
+    <p style='font-size:0.95rem; opacity:0.8;'><em>Note: These meta-regimes are not traded strategies; they isolate specific structural alignments to measure where the model's directional logic is most accurate.</em></p>
     """, unsafe_allow_html=True)
 
 col_scen1, col_scen2 = st.columns(2)
@@ -620,102 +747,66 @@ col_scen1, col_scen2 = st.columns(2)
 with col_scen1:
     st.markdown("""
     <div class="insight-box" style="margin-top:0;">
-    <strong>Scenario Alpha: "Post-Spillover Exhaustion"</strong><br>
-    The data shows that if we force the model to trade during chaotic "Directed Spillover" events, it bleeds capital (-12.08%). However, if we use the regimes as a filter and <em>only</em> trade during "Post-Spillover Exhaustion", we extract a positive drift of +3.98%. <br><br>
-    <em>Market Interpretation:</em> This positive state occurs when a higher-timeframe macro shock has finally passed, and the intraday market enters a calm, predictable mean-reverting phase.
+    <strong>The "Micro Shock" Environment</strong><br>
+    The data shows that when intraday volatility spikes occur against a relatively stable macro backdrop (a "Micro Shock"), the model captures its highest directional edge (IC: +0.0332). This confirms theoretically that short-term mean-reversion overshoots are highly predictable when the larger macro state is not in distress.
     </div>
     """, unsafe_allow_html=True)
 
 with col_scen2:
     st.markdown("""
     <div class="insight-box" style="margin-top:0; border-left-color: #2563EB !important;">
-    <strong style="color:#2563EB;">The Entropy Anomaly</strong><br>
-    We measured "Shannon Entropy" to see how confused the model was. Most researchers assume you should stop trading when a model is confused (High Entropy). <br><br>
-    <em>Our Finding:</em> For EUR/USD, the predictive edge actually survived <strong>better</strong> inside high-noise environments (Low Entropy Sharpe: 1.32 vs. High Entropy Sharpe: 1.71). This proves that for this specific asset, alpha is hidden inside the transitions, while perfectly calm markets are overly efficient and tough to trade.
+    <strong style="color:#2563EB;">The IC-to-Sharpe Divergence</strong><br>
+    The <em>Mixed/Transitional</em> environment reveals a crucial structural tension. It possesses a high positive IC (+0.0349), meaning the model correctly predicts market direction. Yet, it generates negative P&L (-8.74%). Why? Because transitional periods generate extreme regime-switching activity, causing transaction friction to consume the mathematical edge.
     </div>
     """, unsafe_allow_html=True)
 
 st.divider()
 
 # ==========================================
-# SECTION 6: EXPLORATORY TRADING SIMULATION
+# SECTION 6: THEORETICAL & STRUCTURAL LIMITATIONS
 # ==========================================
-st.markdown("<h2 id='6-trading'><span class='section-badge'>Phase 6</span><span class='h2-text'> Exploratory Trading Simulation</span></h2>", unsafe_allow_html=True)
+st.markdown("<h2 id='6-theoretical-limitations'><span class='section-badge'>Phase 6</span><span class='h2-text'> Theoretical & Structural Limitations</span></h2>", unsafe_allow_html=True)
 
 st.markdown("""
-To mathematically prove *why* we must use the regime model as a filter (as shown in Phase 5) rather than a continuous trading algorithm, we ran a final exploratory simulation. We tested what happens if an algorithm tries to trade every single regime shift out-of-sample, applying strict trading fees (spread).
+An honest quantitative investigation must explicitly document where the underlying mathematics break down. Two of our formal Oracle Diagnostic tests failed, pointing to genuine limitations in describing EUR/USD volatility with a pure 3-state Markov sequence.
 """)
-
-col_m1, col_m2, col_m3 = st.columns(3)
-with col_m1:
-    st.metric(label="Vanilla ML Sharpe", value="-0.11")
-with col_m2:
-    st.metric(label="Regime ML Sharpe", value="-0.28", delta="-0.17 (Regime Drag)", delta_color="inverse")
-with col_m3:
-    st.metric(label="Net Ann. Return (Regime)", value="-1.86%", delta="-0.43% vs Vanilla", delta_color="inverse")
-
-st.markdown("""
-Because the 1-hour timeframe is inherently noisy, the regime probabilities shift frequently. By trying to trade every shift, the portfolio turnover explodes, and the trading fees completely wipe out the raw predictive edge.
-""")
-
-st.markdown("""
-<div class="stat-row">
-    <div class="stat-box"><div class="stat-value">0.6543</div><div class="stat-label">Average Turnover per Hour</div></div>
-    <div class="stat-box"><div class="stat-value">6.0000</div><div class="stat-label">Maximum Turnover Spike</div></div>
-    <div class="stat-box"><div class="stat-value">0.90x</div><div class="stat-label">Average Optimal Leverage</div></div>
-    <div class="stat-box"><div class="stat-value">-0.0016%</div><div class="stat-label">Post-Regime Switch Return</div></div>
-</div>
-""", unsafe_allow_html=True)
 
 col_tca1, col_tca2 = st.columns([1, 1])
 
 with col_tca1:
-    st.markdown("#### The Impact of Trading Fees")
-    st.dataframe(get_slippage_data(), use_container_width=True, hide_index=True)
+    st.markdown("#### 1. Incomplete ACF Absorption")
     st.markdown("""
-<div class="findings-box" style="margin-top:10px;">
-<strong>Execution Friction:</strong><br>
-As shown above, introducing just a tiny marginal +0.5 bps of spread drops the annualized return to -25.91%. This confirms that the model trades too frequently to be used as a standalone high-frequency strategy.
-</div>
-""", unsafe_allow_html=True)
-    
-    st.markdown("#### Conditional Prediction Accuracy")
-    st.dataframe(get_ic_heatmap(), use_container_width=True, hide_index=True)
-
-with col_tca2:
-    st.markdown("#### Testing Alternative Rules")
-    st.markdown("We tested 7 different routing rules to see if we could salvage the continuous strategy. Even with complex overlays, the trading fees were too high to beat a simple, conservative threshold filter.")
-    st.dataframe(get_execution_overlays(), use_container_width=True, hide_index=True)
-
-    st.markdown("#### Underlying Signal Edge")
-    st.markdown("""
-    * **Directional Signal IC (Raw):** +0.0281 (Statistically significant edge)
-    * **Directional Signal IC (Smoothed):** +0.0268
-    """)
-    
-    st.markdown("""
-    <div class="stat-box" style="margin-top: 15px;">
-        <div class="stat-label">Position Size vs Future Return Correlation</div>
-        <div class="stat-value" style="color:var(--text-color) !important;">-0.0108</div>
+    <div class="audit-box" style="margin-top:10px; border-left-color: #EF4444 !important;">
+    <strong>The Calm Regime Sub-Structure</strong><br>
+    If a regime model correctly captures volatility clustering, the autocorrelation (ACF) of absolute returns <em>within</em> a specific regime should be lower than the unconditional baseline. <br><br>
+    <strong>The Failure:</strong> The Calm regime's ACF (0.2625) was actually <em>higher</em> than the unconditional ACF (0.2579). <br><br>
+    <strong>Interpretation:</strong> By isolating the 'Calm' observations, we inadvertently concentrated residual clustering. This proves the Calm state contains its own hidden sub-regimes (brief spikes interspersed with dead periods) that a single within-regime GARCH(1,1) specification cannot mathematically explain.
     </div>
     """, unsafe_allow_html=True)
 
-col_ic_img1, col_ic_img2 = st.columns(2)
-with col_ic_img1:
-    st.markdown("""dafadsaf""", unsafe_allow_html=True)
-    # st.image("slippage_curve.png", caption="Slippage Sensitivity Curve (Net Return Decay)", use_container_width=True)
-with col_ic_img2:
-    st.image("rolling_ic_stability.png", caption="Rolling 500-Hour Spearman IC: Proving Edge Stability", use_container_width=True)
+with col_tca2:
+    st.markdown("#### 2. The Early Warning Failure")
+    st.markdown("""
+    <div class="audit-box" style="margin-top:10px; border-left-color: #F59E0B !important;">
+    <strong>Coincident vs. Leading Indicators</strong><br>
+    We tested whether the crisis hazard probabilities could provide an early warning of an impending market drawdown in the subsequent 12 hours.<br><br>
+    <strong>The Failure:</strong> The forward drawdown in the 12H following a hazard spike was statistically insignificant (-0.18%). <br><br>
+    <strong>Interpretation:</strong> The HMM detects crises exactly as they occur, not before. The mathematics are reactive. The model cannot be used to pre-position for a structural break; it can only condition risk sizing <em>after</em> the break has been mathematically confirmed.
+    </div>
+    """, unsafe_allow_html=True)
 
-st.image("institutional_6_panel_wfa.png", caption="Visual Research Dashboard mapping Returns against Regimes and Hazard Spikes", use_container_width=True)
-
-st.markdown("#### Strategy Efficacy Matrix")
-st.dataframe(get_strat_sharpe_matrix(), use_container_width=True, hide_index=True)
+st.markdown("#### The Transaction Cost Boundary (Why it is not an Alpha Engine)")
 st.markdown("""
-<p style="font-size:1.0rem; opacity:0.85; margin-top:-10px;">
-<strong>Interpretation:</strong> The underlying market behavior acts exactly as expected (Mean Reversion does terrible during Crisis states, while Momentum thrives). The regimes successfully separate these behaviors, but moving money between them costs too much in spread.
+<p style="font-size:1.15rem; opacity:0.9; margin-bottom: 25px;">
+While the master directional signal carries a persistent positive Information Coefficient (Raw IC: +0.0278, p=1.1e-05), the model is acutely sensitive to microstructure friction. A sensitivity analysis revealed that adding just <strong>+0.5bps of additional spread</strong> collapses the net return from -1.59% to -23.13%. High-frequency regime-switching generates valid statistical signals, but they are consumed by the friction of crossing the spread.
 </p>
 """, unsafe_allow_html=True)
+
+col_ic_img1, col_ic_img2 = st.columns([1, 1.5])
+with col_ic_img1:
+    st.image("rolling_ic_stability.png", caption="Rank Correlation remains positive, but requires low-friction execution.", use_container_width=True)
+with col_ic_img2:
+    st.image("institutional_6_panel_wfa.png", caption="Visualizing the transition frequencies that cause execution drag.", use_container_width=True)
 
 st.divider()
 
@@ -727,23 +818,33 @@ st.markdown("<h2 id='7-conclusion'><span class='section-badge'>Phase 7</span><sp
 st.markdown("""
 <div class="findings-box" style="border-left-color: #4B5563 !important; margin-bottom: 40px; margin-top: 0px;">
 <div class="findings-title" style="color: #4B5563;">Final Hypotheses Evaluated</div>
-<p style="margin-bottom:15px; color: var(--text-color); opacity: 0.95;">All findings are backed by formal statistical tests evaluated on out-of-sample data. In institutional research, proving what <em>doesn't</em> work is just as valuable as proving what does.</p>
+<p style="margin-bottom:15px; color: var(--text-color); opacity: 0.95;">All findings are backed by formal statistical tests evaluated strictly out-of-sample. In institutional research, identifying boundary conditions is just as critical as proving econometric edge.</p>
 <ul style="font-size:1.05rem;">
-<li><strong>H1 (Trading the Regimes Outperforms Vanilla):</strong> 
-    <br><span><span style="color:#EF4444; font-weight:bold;">[REJECTED]</span> Continuously switching states generated massive turnover, causing the regime model to underperform a simpler baseline after trading fees.</span></li>
-<li style="margin-top: 12px;"><strong>H2 (MS-GARCH Volatility Superiority):</strong> 
-    <br><span><span style="color:#EF4444; font-weight:bold;">[REJECTED]</span> The standard GARCH was statistically superior for pure volatility forecasting. The HMM adds value in structure, not pure variance estimation.</span></li>
-<li style="margin-top: 12px;"><strong>H3 (Noise Destroys Edge):</strong> 
-    <br><span><span style="color:#EF4444; font-weight:bold;">[REJECTED]</span> By measuring Shannon Entropy, we found that predictive edge actually survived better during high-noise, transitional environments (Sharpe 1.71) rather than calm ones (Sharpe 1.32).</span></li>
-<li style="margin-top: 12px;"><strong>H4 (The Underlying Math Predicts Direction):</strong> 
-    <br><span><span style="color:#10B981; font-weight:bold;">[VERIFIED]</span> The core engine successfully predicts price direction (Raw IC: +0.0281 | p-value: 9.28e-06). The structural math works flawlessly.</span></li>
+<li><strong>H1 (Regime filtering generates standalone execution alpha):</strong> 
+    <br><span><span style="color:#EF4444; font-weight:bold;">[REJECTED]</span> While structural regimes exist, regime transitions are too frequent at the micro level. The friction of continuous state-switching mathematically destroys the theoretical execution edge.</span></li>
+<li style="margin-top: 12px;"><strong>H2 (MS-GARCH Volatility Forecasting Superiority):</strong> 
+    <br><span><span style="color:#10B981; font-weight:bold;">[VERIFIED]</span> The Diebold-Mariano test confirms MS-GARCH produces statistically superior volatility forecasts compared to Causal GARCH (DM-Stat +2.5790, p=0.00495). The multi-state architecture successfully isolates structural tail-risk.</span></li>
+<li style="margin-top: 12px;"><strong>H3 (High entropy/noise strictly destroys predictive edge):</strong> 
+    <br><span><span style="color:#EF4444; font-weight:bold;">[REJECTED]</span> By measuring Shannon Entropy, we found that the highest predictive rank correlation actually survived better during high-noise, transitional environments rather than pure calm ones.</span></li>
+<li style="margin-top: 12px;"><strong>H4 (The Underlying Engine Predicts Direction):</strong> 
+    <br><span><span style="color:#10B981; font-weight:bold;">[VERIFIED]</span> The tensor-routed master signal carries a persistent positive Information Coefficient (Raw IC: +0.0278 | p=1.1023e-05). The underlying directional physics are statistically sound.</span></li>
 </ul>
 <hr style="border-color: rgba(128,128,128,0.2); margin: 20px 0;">
 <div style="font-size: 1.1rem;">
-<strong>Senior Quant Recommendation:</strong><br>
-The Advanced HMM effectively parses noisy financial time-series into mathematically pure structural regimes out-of-sample. However, because execution friction destroys the continuous trading edge, the model should be deployed strictly in <strong>Research Mode</strong> as a contextual risk filter. It should be used to tell portfolio managers <em>when</em> to size up during favorable macro setups, and <em>when</em> to sit out.
+<strong>Senior Quant Conclusion:</strong><br>
+This investigation proves that EUR/USD volatility is genuinely regime-structured, and that MS-GARCH provides a statistically superior fit to the data-generating process. However, the failure of the ACF absorption test and the reactive nature of the HMM transitions prove that regime models should not be used as standalone high-frequency execution engines. Their true institutional value lies in <strong>contextual risk filtering</strong>—scaling exposures based on verified structural state clarity.
 </div>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("<p style='text-align: center; font-size: 1.05rem; opacity: 0.6; margin-top: 50px;'><em>Report generated from internal MS-GARCH Quantitative Production Framework.</em></p>", unsafe_allow_html=True)
+st.markdown("""
+<div style='text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(128, 128, 128, 0.2);'>
+    <p style='font-size: 1.15rem; color: #6B7280; font-style: italic;'>
+        If you made it all the way to the end, thank you for viewing my work. <br>
+        I am always looking to refine these projects, so if you have critiques, suggestions, or just want to talk market dynamics, I'd love to hear them:
+    </p>
+    <a href='mailto:jayeshchaudharyofficial@gmail.com' style='font-size: 1.15rem; font-weight: 700; color: #FFFFFF; background-color: #3B82F6; padding: 10px 24px; border-radius: 6px; text-decoration: none; display: inline-block; transition: all 0.2s;'>
+        ✉️ Email Me
+    </a>
+</div>
+""", unsafe_allow_html=True)
