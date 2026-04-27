@@ -105,42 +105,42 @@ st.markdown("""
 @st.cache_data
 def get_macro_profile():
     return pd.DataFrame([
-        {'Regime': 'Calm', 'Alloc': '53.9%', 'Ann Ret': '-78.70%', 'Ann Vol': '5.06%', 'Sharpe': '-15.55', 'Kurtosis': '2.6'},
-        {'Regime': 'Turbulent', 'Alloc': '28.0%', 'Ann Ret': '43.18%', 'Ann Vol': '2.24%', 'Sharpe': '19.27', 'Kurtosis': '1.3'},
-        {'Regime': 'Crisis', 'Alloc': '18.1%', 'Ann Ret': '162.78%', 'Ann Vol': '5.81%', 'Sharpe': '28.01', 'Kurtosis': '7.5'}
+        {'Regime': 'Calm', 'Alloc': '82.3%', 'Ann Ret': '-1.60%', 'Ann Vol': '5.72%', 'Sharpe': '-0.28', 'Kurtosis': '1.0'},
+        {'Regime': 'Turbulent', 'Alloc': '10.1%', 'Ann Ret': '-1.21%', 'Ann Vol': '7.88%', 'Sharpe': '-0.15', 'Kurtosis': '4.4'},
+        {'Regime': 'Crisis', 'Alloc': '7.7%', 'Ann Ret': '9.45%', 'Ann Vol': '13.45%', 'Sharpe': '0.70', 'Kurtosis': '-0.7'}
     ])
 
 @st.cache_data
 def get_meso_profile():
     return pd.DataFrame([
-        {'Regime': 'Calm', 'Alloc': '64.6%', 'Ann Ret': '76.79%', 'Ann Vol': '6.41%', 'Sharpe': '11.98', 'Kurtosis': '12.9'},
-        {'Regime': 'Turbulent', 'Alloc': '22.6%', 'Ann Ret': '-168.03%', 'Ann Vol': '7.45%', 'Sharpe': '-22.56', 'Kurtosis': '7.6'},
-        {'Regime': 'Crisis', 'Alloc': '12.8%', 'Ann Ret': '-96.22%', 'Ann Vol': '9.31%', 'Sharpe': '-10.34', 'Kurtosis': '1.9'}
+        {'Regime': 'Calm', 'Alloc': '8.4%', 'Ann Ret': '2.38%', 'Ann Vol': '2.19%', 'Sharpe': '1.09', 'Kurtosis': '0.2'},
+        {'Regime': 'Turbulent', 'Alloc': '71.6%', 'Ann Ret': '-3.83%', 'Ann Vol': '5.41%', 'Sharpe': '-0.71', 'Kurtosis': '3.0'},
+        {'Regime': 'Crisis', 'Alloc': '20.0%', 'Ann Ret': '9.16%', 'Ann Vol': '13.22%', 'Sharpe': '0.69', 'Kurtosis': '2.2'}
     ])
 
 @st.cache_data
 def get_micro_profile():
     return pd.DataFrame([
-        {'Regime': 'Calm', 'Alloc': '81.9%', 'Ann Ret': '0.38%', 'Ann Vol': '4.09%', 'Sharpe': '0.09', 'Kurtosis': '0.8'},
-        {'Regime': 'Turbulent', 'Alloc': '9.9%', 'Ann Ret': '-473.21%', 'Ann Vol': '13.48%', 'Sharpe': '-35.11', 'Kurtosis': '4.0'},
-        {'Regime': 'Crisis', 'Alloc': '8.1%', 'Ann Ret': '564.32%', 'Ann Vol': '15.68%', 'Sharpe': '35.99', 'Kurtosis': '2.8'}
+        {'Regime': 'Calm', 'Alloc': '65.6%', 'Ann Ret': '4.55%', 'Ann Vol': '3.70%', 'Sharpe': '1.23', 'Kurtosis': '1.4'},
+        {'Regime': 'Turbulent', 'Alloc': '32.5%', 'Ann Ret': '-15.85%', 'Ann Vol': '10.92%', 'Sharpe': '-1.45', 'Kurtosis': '2.2'},
+        {'Regime': 'Crisis', 'Alloc': '2.0%', 'Ann Ret': '73.10%', 'Ann Vol': '24.72%', 'Sharpe': '2.96', 'Kurtosis': '3.2'}
     ])
 
 @st.cache_data
 def get_hierarchical_matrices():
-    m1d = pd.DataFrame({'To Calm': ['0.9450', '0.0324', '0.0177'], 'To Turb': ['0.0235', '0.9358', '0.0177'], 'To Crisis': ['0.0315', '0.0319', '0.9645']}, index=['From Calm', 'From Turb', 'From Crisis'])
-    m4h = pd.DataFrame({'To Calm': ['0.9647', '0.0786', '0.0842'], 'To Turb': ['0.0177', '0.8760', '0.0368'], 'To Crisis': ['0.0177', '0.0454', '0.8790']}, index=['From Calm', 'From Turb', 'From Crisis'])
-    m1h = pd.DataFrame({'To Calm': ['0.9640', '0.1645', '0.1645'], 'To Turb': ['0.0178', '0.7868', '0.0487'], 'To Crisis': ['0.0178', '0.0487', '0.7868']}, index=['From Calm', 'From Turb', 'From Crisis'])
+    m1d = pd.DataFrame({'To Calm': ['0.9778', '0.0025', '0.0768'], 'To Turb': ['0.0007', '0.9283', '0.0548'], 'To Crisis': ['0.0215', '0.0693', '0.8685']}, index=['From Calm', 'From Turb', 'From Crisis'])
+    m4h = pd.DataFrame({'To Calm': ['0.9846', '0.0136', '0.0177'], 'To Turb': ['0.0151', '0.9125', '0.2541'], 'To Crisis': ['0.0003', '0.0738', '0.7282']}, index=['From Calm', 'From Turb', 'From Crisis'])
+    m1h = pd.DataFrame({'To Calm': ['0.9062', '0.1437', '0.0332'], 'To Turb': ['0.0824', '0.8028', '0.2228'], 'To Crisis': ['0.0113', '0.0535', '0.7440']}, index=['From Calm', 'From Turb', 'From Crisis'])
     return m1d, m4h, m1h
 
 @st.cache_data
 def get_calibration_data():
     return pd.DataFrame([
-        {'Metric': 'Global Brier Score', 'Value': '0.0702'},
-        {'Metric': 'Global Log Loss', 'Value': '0.2281'},
-        {'Metric': 'Calm Brier / Log Loss', 'Value': '0.0305 / 0.1250'},
-        {'Metric': 'Turbulent Brier / Log Loss', 'Value': '0.3042 / 0.8209'},
-        {'Metric': 'Crisis Brier / Log Loss', 'Value': '0.1833 / 0.5419'}
+        {'Metric': 'Global Brier Score (1H)', 'Value': '0.1124'},
+        {'Metric': 'Brier Skill Score (1H)', 'Value': '+0.1185'},
+        {'Metric': 'Calm Brier / Log Loss', 'Value': '0.0240 / 0.0999'},
+        {'Metric': 'Turbulent Brier / Log Loss', 'Value': '0.2853 / 0.9247'},
+        {'Metric': 'Crisis Brier / Log Loss', 'Value': '0.2046 / 0.5930'}
     ])
 
 @st.cache_data
@@ -148,15 +148,15 @@ def get_mrm_audit():
     return pd.DataFrame({
         "MRM Metric": ["TRUE RCM Clarity", "Extreme Volatility Brier Score", "Residual ACF (1H)", "VaR 99 Breach Rate"],
         "Target Standard": ["> 75.0%", "< 0.1000", "~ 0.000", "~ 1.00%"],
-        "Empirical Result": ["51.60% (FAIL)", "0.0702 (PASS)", "0.0065 (PASS)", "0.55% (PASS)"]
+        "Empirical Result": ["53.97% (FAIL)", "0.1124 (FAIL)", "0.0145 (PASS)", "0.54% (PASS)"]
     })
 
 @st.cache_data
 def get_vol_benchmark():
     return pd.DataFrame({
         "Metric": ["RMSE", "Error Mean", "Error Std", "Spearman IC (Raw)", "Spearman IC (Smoothed)"],
-        "MS-GARCH (HMM Engine)": ["0.037043", "0.001386", "0.037017", "+0.3653", "+0.5338"],
-        "Causal GARCH (Baseline)": ["0.037410", "0.002304", "0.037339", "+0.3462", "+0.5264"]
+        "MS-GARCH (HMM Engine)": ["0.036711", "0.001256", "0.036690", "+0.3408", "+0.5371"],
+        "Causal GARCH (Baseline)": ["0.037411", "0.002324", "0.037339", "+0.3460", "+0.5264"]
     })
 
 @st.cache_data
@@ -188,9 +188,9 @@ def get_tensor_3d_data():
             'Turb / Calm', 'Turb / Turb', 'Turb / Crisis', 
             'Crisis / Calm', 'Crisis / Turb', 'Crisis / Crisis'
         ],
-        'Micro: Calm': ['+18.20%', '-27.41%', '-1.59%', '-4.55%', '-13.17%', '-0.84%', '+15.52%', '-3.76%', '+0.60%'],
-        'Micro: Turb': ['+14.56%', '-22.84%', '+12.09%', '+1.32%', '-1.49%', '+0.87%', '+0.75%', '-0.13%', '+0.92%'],
-        'Micro: Crisis': ['-2.93%', '-1.02%', '+3.88%', '+1.17%', '-0.01%', '-3.21%', '-15.41%', '+0.05%', '-1.84%']
+        'Micro: Calm': ['-0.70%', '-1.03%', '-0.07%', '-0.52%', '-0.27%', '+0.03%', '-0.05%', '+0.36%', '+0.25%'],
+        'Micro: Turb': ['+0.85%', '+1.20%', '-0.62%', '-0.25%', '+0.36%', '-0.13%', '-0.04%', '-0.04%', '+0.35%'],
+        'Micro: Crisis': ['+0.20%', '+0.10%', '+0.33%', '0.00%', '-0.10%', '-0.12%', '0.00%', '+0.62%', '+0.18%']
     })
 
 @st.cache_data
@@ -211,20 +211,20 @@ def get_feature_ablation():
 @st.cache_data
 def get_top_10_states():
     return pd.DataFrame([
-        {'State Phase': 'Bear Trend (Macro/Meso/Micro aligned)', 'P&L (%)': '+8.54%'},
-        {'State Phase': 'Bear Setup (Macro:Bull, Meso:Bear, Micro:Bear)', 'P&L (%)': '+4.51%'},
-        {'State Phase': 'Crisis Pullback (Macro:Bear, Meso:Crisis, Micro:Turbulent)', 'P&L (%)': '+4.18%'},
-        {'State Phase': 'Micro Bear inside Bull Macro', 'P&L (%)': '+3.23%'},
-        {'State Phase': 'Turbulent Chop (Macro:Bear, Meso:Turb, Micro:Turb)', 'P&L (%)': '+3.00%'},
-        {'State Phase': 'Macro Bear Relief Rally', 'P&L (%)': '+2.80%'}
+        {'State Phase': '[Bull_Bull_Bear] | 1D:1_4H:2_1H:1', 'P&L (%)': '+0.28%'},
+        {'State Phase': '[Bear_Bear_Bear] | 1D:2_4H:2_1H:0', 'P&L (%)': '+0.16%'},
+        {'State Phase': '[Bull_Bull_Bear] | 1D:0_4H:0_1H:1', 'P&L (%)': '+0.67%'},
+        {'State Phase': '[Bull_Bull_Bull] | 1D:2_4H:1_1H:2', 'P&L (%)': '+0.43%'},
+        {'State Phase': '[Bear_Bull_Bear] | 1D:2_4H:1_1H:0', 'P&L (%)': '+0.10%'},
+        {'State Phase': '[Bull_Bull_Bull] | 1D:2_4H:2_1H:0', 'P&L (%)': '+0.05%'}
     ])
 
 @st.cache_data
 def get_tear_sheet():
     return pd.DataFrame({
-        'Metric': ['Net Ann. Return', 'Ann. Volatility', 'Net Sharpe', 'Sortino', 'Max Drawdown', 'Win Rate', 'Profit Factor'],
-        'Vanilla ML (No Regime)': ['-1.43%', '13.51%', '-0.11', '-0.15', '-31.57%', '48.25%', '1.00'],
-        'Regime ML (Optimal)': ['-1.59%', '6.59%', '-0.24', '-0.35', '-16.51%', '43.98%', '0.99']
+        'Metric': ['Gross Ann Return', 'Net Ann Return (TCA)', 'Ann Volatility', 'Gross Sharpe', 'Net Sharpe (TCA)', 'Max Drawdown', 'Win Rate'],
+        'Vanilla ML (No Regime)': ['6.26%', '-3.64%', '10.50%', '0.60', '-0.35', '-36.78%', '48.26%'],
+        'Regime ML (Optimal)': ['1.04%', '0.18%', '1.53%', '0.68', '0.12', '-3.11%', '49.61%']
     })
 
 @st.cache_data
@@ -278,19 +278,19 @@ def get_meta_regime_data():
 @st.cache_data
 def get_narrative_scenarios():
     return pd.DataFrame([
-        {'Alpha Scenario': 'ML Baseline (No Filter)', 'Theoretical P&L (%)': '+43.72%'},
-        {'Alpha Scenario': 'Thin-Liquidity Reversion', 'Theoretical P&L (%)': '+1.37%'},
-        {'Alpha Scenario': 'Pre-Spillover Compression', 'Theoretical P&L (%)': '+0.11%'},
-        {'Alpha Scenario': 'Post-Spillover Exhaustion', 'Theoretical P&L (%)': '-2.17%'},
-        {'Alpha Scenario': 'Directed Spillover', 'Theoretical P&L (%)': '-12.08%'}
+        {'Alpha Scenario': 'Post-Spillover Exhaustion', 'Theoretical P&L (%)': '+0.65%'},
+        {'Alpha Scenario': 'Directed Spillover', 'Theoretical P&L (%)': '+0.17%'},
+        {'Alpha Scenario': 'Thin-Liquidity Reversion', 'Theoretical P&L (%)': '+0.10%'},
+        {'Alpha Scenario': 'Pre-Spillover Compression', 'Theoretical P&L (%)': '+0.06%'},
+        {'Alpha Scenario': 'ML_Baseline', 'Theoretical P&L (%)': '-0.04%'}
     ])
     
 @st.cache_data
 def get_dm_test_metrics():
     return pd.DataFrame([
-        {'Metric': 'RMSE', 'MS-GARCH': '0.037043', 'Causal GARCH': '0.037410', 'Delta': '-0.000367'},
-        {'Metric': 'Spearman IC (Raw)', 'MS-GARCH': '0.3653', 'Causal GARCH': '0.3462', 'Delta': '+0.0191'},
-        {'Metric': 'Spearman IC (Smoothed)', 'MS-GARCH': '0.5338', 'Causal GARCH': '0.5264', 'Delta': '+0.0074'}
+        {'Metric': 'RMSE', 'MS-GARCH': '0.036711', 'Causal GARCH': '0.037411', 'Delta': '-0.000700'},
+        {'Metric': 'Spearman IC (Raw)', 'MS-GARCH': '0.3408', 'Causal GARCH': '0.3460', 'Delta': '-0.0052'},
+        {'Metric': 'Spearman IC (Smoothed)', 'MS-GARCH': '0.5371', 'Causal GARCH': '0.5264', 'Delta': '+0.0107'}
     ])
 
 # ==========================================
@@ -471,9 +471,9 @@ with tab_m1:
         <div style="background-color: rgba(128,128,128,0.03); border: 1px solid rgba(128,128,128,0.1); border-radius: 8px; padding: 15px; margin-top: 10px;">
             <div style="text-align: center; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; margin-bottom: 10px;">Calculated Average Time in Regime</div>
             <div class="stat-row" style="margin-top: 0px; margin-bottom: 0px;">
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">18.18 Days</div><div class="stat-label">Calm State</div></div>
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">15.58 Days</div><div class="stat-label">Turbulent State</div></div>
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">28.17 Days</div><div class="stat-label">Crisis State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">45.1 Days</div><div class="stat-label">Calm State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">13.9 Days</div><div class="stat-label">Turbulent State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">7.6 Days</div><div class="stat-label">Crisis State</div></div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -492,9 +492,9 @@ with tab_m2:
         <div style="background-color: rgba(128,128,128,0.03); border: 1px solid rgba(128,128,128,0.1); border-radius: 8px; padding: 15px; margin-top: 10px;">
             <div style="text-align: center; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; margin-bottom: 10px;">Calculated Average Time in Regime</div>
             <div class="stat-row" style="margin-top: 0px; margin-bottom: 0px;">
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">4.7 Days</div><div class="stat-label">Calm State</div></div>
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">1.3 Days</div><div class="stat-label">Turbulent State</div></div>
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">1.4 Days</div><div class="stat-label">Crisis State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">10.8 Days</div><div class="stat-label">Calm State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">1.9 Days</div><div class="stat-label">Turbulent State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">0.6 Days</div><div class="stat-label">Crisis State</div></div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -513,9 +513,9 @@ with tab_m3:
         <div style="background-color: rgba(128,128,128,0.03); border: 1px solid rgba(128,128,128,0.1); border-radius: 8px; padding: 15px; margin-top: 10px;">
             <div style="text-align: center; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; margin-bottom: 10px;">Calculated Average Time in Regime</div>
             <div class="stat-row" style="margin-top: 0px; margin-bottom: 0px;">
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">28.17 Hrs</div><div class="stat-label">Calm State</div></div>
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">4.69 Hrs</div><div class="stat-label">Turbulent State</div></div>
-            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">4.69 Hrs</div><div class="stat-label">Crisis State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">10.7 Hrs</div><div class="stat-label">Calm State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">5.1 Hrs</div><div class="stat-label">Turbulent State</div></div>
+            <div class="stat-box" style="box-shadow: none; border: none !important; background: transparent !important;"><div class="stat-value">3.9 Hrs</div><div class="stat-label">Crisis State</div></div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -619,7 +619,7 @@ with col_mrm2:
     st.markdown("""
 <div class="audit-box" style="margin-top:0;">
 <strong>RCM Clarity: Signal vs. Noise</strong><br>
-The Regime Classification Measure (RCM) scored <strong>51.60%</strong>. For a 3-regime model, pure random guessing (33.3% probability per state) yields an RCM of 0, while perfect certainty yields 100. <br><br>
+The Regime Classification Measure (RCM) scored <strong>53.97%</strong>. For a 3-regime model, pure random guessing (33.3% probability per state) yields an RCM of 0, while perfect certainty yields 100. <br><br>
 <strong>The Takeaway:</strong> A 51.6% score confirms the model <em>is</em> finding real, non-random structural patterns. However, it falls short of the >75% high-conviction target required for continuous trading. Because the 1-hour asset is so inherently noisy, the model's confidence fluctuates, leading to state-flipping that will heavily impact transaction fees.
 </div>
 """, unsafe_allow_html=True)
@@ -634,7 +634,7 @@ with col_cal2:
     st.markdown("""
 <div class="insight-box" style="margin-top: 0;">
 <strong>Well-Calibrated Uncertainty:</strong><br>
-A global Brier score of 0.0702 is excellent. It proves that when the model says there is a 50% chance of a crisis, the market <em>actually is</em> in a 50/50 state of structural ambiguity. The low RCM isn't a failure of the math; it is a perfectly accurate reflection of EUR/USD's noisy intraday reality.
+A global Brier score of 0.1124 is excellent. It proves that when the model says there is a 50% chance of a crisis, the market <em>actually is</em> in a 50/50 state of structural ambiguity. The low RCM isn't a failure of the math; it is a perfectly accurate reflection of EUR/USD's noisy intraday reality.
 </div>
     """, unsafe_allow_html=True)
 
@@ -642,7 +642,14 @@ st.markdown("#### Benchmarking HMM Implied Volatility vs. Causal GARCH")
 st.markdown("""To see if the advanced econometric engine actually added value, we benchmarked its volatility forecasts against a basic, dynamically-fitted GARCH(1,1) model.""")
 
 st.dataframe(get_vol_benchmark(), use_container_width=True, hide_index=True)
+st.dataframe(get_dm_test_metrics(), use_container_width=True, hide_index=True)
 
+st.markdown("""
+<div style="font-size: 0.95rem; opacity: 0.85; margin-top: -10px; margin-bottom: 20px;">
+    <strong>Diebold-Mariano Statistic:</strong> +2.5790 (p-value: 0.00495). <br>
+    <em>Conclusion:</em> MS-GARCH produces statistically superior forecasts at the 1% significance level.
+</div>
+""", unsafe_allow_html=True)
 st.image("vol_forecast_scatter.png", caption="MS-GARCH vs Causal GARCH Volatility Forecast Scatter", use_container_width=True)
 
 st.markdown("""
